@@ -103,7 +103,7 @@ export default function Hero() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="text-xl md:text-2xl mb-12 text-gray-300"
         >
-          Premium transformation gym in Bur Dubai.
+          Premium transformation gym in Oud Metha, Dubai.
         </motion.p>
 
         {/* CTA Buttons */}

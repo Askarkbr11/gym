@@ -21,7 +21,7 @@ export default function Contact() {
             Get In <span className="text-primary">Touch</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Visit us at our location in Bur Dubai or contact us to book your free trial.
+            Visit us at our location in Oud Metha, Dubai or contact us to book your free trial.
           </p>
         </motion.div>
 
@@ -44,11 +44,9 @@ export default function Contact() {
               <div>
                 <h3 className="text-xl font-bold mb-2">Address</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  New Al Madina Supermarket,
+                  2nd St - Oud Metha
                   <br />
-                  Al Zarooni Building - HC Floor,
-                  <br />
-                  Rolla Street - Bur Dubai - UAE
+                  Dubai - United Arab Emirates
                 </p>
               </div>
             </div>
@@ -63,10 +61,10 @@ export default function Contact() {
               <div>
                 <h3 className="text-xl font-bold mb-2">Phone</h3>
                 <a
-                  href="tel:+971XXXXXXXXX"
+                  href="tel:+971585240247"
                   className="text-primary hover:text-red-600 transition-colors"
                 >
-                  +971 XX XXX XXXX
+                  +971 58 524 0247
                 </a>
               </div>
             </div>
@@ -81,10 +79,10 @@ export default function Contact() {
               <div>
                 <h3 className="text-xl font-bold mb-2">Email</h3>
                 <a
-                  href="mailto:info@restartfitness.ae"
+                  href="mailto:info@247gym.ae"
                   className="text-primary hover:text-red-600 transition-colors"
                 >
-                  info@restartfitness.ae
+                  info@247gym.ae
                 </a>
               </div>
             </div>
@@ -115,7 +113,7 @@ export default function Contact() {
             className="relative h-[500px] rounded-lg overflow-hidden"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.1234567890123!2d55.12345678901234!3d25.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA3JzI0LjQiTiA1NcKwMDcnMjQuNCJF!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1234567890123!2d55.27845678901234!3d25.23456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69c2c8b8b8b9%3A0x1234567890abcdef!2s2nd%20St%20-%20Oud%20Metha%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -123,6 +121,7 @@ export default function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0"
+              title="247 Gym - The Fitness District Location Map"
             />
           </motion.div>
         </div>

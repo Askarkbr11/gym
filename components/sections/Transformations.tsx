@@ -159,11 +159,15 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
           <div className="absolute inset-0">
             <Image
               src={transformation.before}
-              alt={`${transformation.name} - Before`}
+              alt={`${transformation.name} transformation before at 247 Gym - The Fitness District`}
               fill
               className="object-cover"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
             />
           </div>
 
@@ -174,11 +178,15 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
           >
             <Image
               src={transformation.after}
-              alt={`${transformation.name} - After`}
+              alt={`${transformation.name} transformation after at 247 Gym - The Fitness District`}
               fill
               className="object-cover"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
             />
           </div>
 
@@ -250,9 +258,13 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
                 <div className="relative h-[500px] rounded-lg overflow-hidden">
                   <Image
                     src={transformation.before}
-                    alt={`${transformation.name} - Before`}
+                    alt={`${transformation.name} transformation before at 247 Gym`}
                     fill
                     className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
                   />
                   <div className="absolute bottom-4 left-4 bg-black/70 px-3 py-1 rounded">
                     Before
@@ -261,9 +273,13 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
                 <div className="relative h-[500px] rounded-lg overflow-hidden">
                   <Image
                     src={transformation.after}
-                    alt={`${transformation.name} - After`}
+                    alt={`${transformation.name} transformation after at 247 Gym`}
                     fill
                     className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
                   />
                   <div className="absolute bottom-4 left-4 bg-black/70 px-3 py-1 rounded">
                     After

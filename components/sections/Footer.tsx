@@ -12,10 +12,10 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "https://facebook.com/restartfitness" },
-  { name: "Instagram", icon: Instagram, href: "https://instagram.com/restartfitness" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com/restartfitness" },
-  { name: "YouTube", icon: Youtube, href: "https://youtube.com/restartfitness" },
+  { name: "Facebook", icon: Facebook, href: "https://facebook.com/247gym" },
+  { name: "Instagram", icon: Instagram, href: "https://instagram.com/247gym" },
+  { name: "Twitter", icon: Twitter, href: "https://twitter.com/247gym" },
+  { name: "YouTube", icon: Youtube, href: "https://youtube.com/247gym" },
 ];
 
 export default function Footer() {
@@ -28,13 +28,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              ReStart <span className="text-primary">Fitness</span>
+              247 <span className="text-primary">Gym</span>
             </h3>
             <p className="text-gray-400 mb-4">
               Build Strength. Break Limits.
             </p>
             <p className="text-gray-500 text-sm">
-              Premium transformation gym in Bur Dubai, UAE
+              The Fitness District - Oud Metha, Dubai, UAE
             </p>
           </div>
 
@@ -60,25 +60,24 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                New Al Madina Supermarket,
+                2nd St - Oud Metha
                 <br />
-                Al Zarooni Building - HC Floor
+                Dubai - United Arab Emirates
               </li>
-              <li>Rolla Street - Bur Dubai - UAE</li>
               <li>
                 <a
-                  href="tel:+971XXXXXXXXX"
+                  href="tel:+971585240247"
                   className="hover:text-primary transition-colors"
                 >
-                  +971 XX XXX XXXX
+                  +971 58 524 0247
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@restartfitness.ae"
+                  href="mailto:info@247gym.ae"
                   className="hover:text-primary transition-colors"
                 >
-                  info@restartfitness.ae
+                  info@247gym.ae
                 </a>
               </li>
             </ul>
@@ -110,7 +109,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © {currentYear} ReStart Fitness Center & Gym. All rights reserved.
+            © {currentYear} 247 Gym - The Fitness District. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <Link

@@ -35,7 +35,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="text-2xl font-bold">
-            ReStart <span className="text-primary">Fitness</span>
+            247 <span className="text-primary">Gym</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -5,13 +5,13 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ReStart Fitness Center & Gym | Build Strength. Break Limits. | Bur Dubai, UAE",
-  description: "Premium transformation gym in Bur Dubai, UAE. Offering Strength Training, Fat Loss, Personal Training, CrossFit, and Group Classes. Book your free trial today!",
-  keywords: "gym, fitness, Bur Dubai, UAE, strength training, personal training, CrossFit, group classes, fat loss",
-  authors: [{ name: "ReStart Fitness Center & Gym" }],
+  title: "247 Gym - The Fitness District | Build Strength. Break Limits. | Oud Metha, Dubai, UAE",
+  description: "Premium transformation gym in Oud Metha, Dubai, UAE. Offering Strength Training, Fat Loss, Personal Training, CrossFit, and Group Classes. Book your free trial today!",
+  keywords: "gym, fitness, Oud Metha, Dubai, UAE, strength training, personal training, CrossFit, group classes, fat loss, 247 Gym",
+  authors: [{ name: "247 Gym - The Fitness District" }],
   openGraph: {
-    title: "ReStart Fitness Center & Gym | Build Strength. Break Limits.",
-    description: "Premium transformation gym in Bur Dubai, UAE",
+    title: "247 Gym - The Fitness District | Build Strength. Break Limits.",
+    description: "Premium transformation gym in Oud Metha, Dubai, UAE",
     type: "website",
     locale: "en_AE",
   },
@@ -36,15 +36,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "ReStart Fitness Center & Gym",
-              "description": "Premium transformation gym in Bur Dubai, UAE",
+              "name": "247 Gym - The Fitness District",
+              "description": "Premium transformation gym in Oud Metha, Dubai, UAE",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Al Zarooni Building - HC Floor, Rolla Street",
-                "addressLocality": "Bur Dubai",
-                "addressCountry": "UAE",
+                "streetAddress": "2nd St - Oud Metha",
+                "addressLocality": "Dubai",
+                "addressCountry": "United Arab Emirates",
               },
-              "telephone": "+971-XX-XXX-XXXX",
+              "telephone": "+971585240247",
               "priceRange": "$$",
               "openingHours": "Mo-Su 06:00-23:00",
             }),

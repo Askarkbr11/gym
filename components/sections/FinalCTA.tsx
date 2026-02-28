@@ -44,7 +44,7 @@ export default function FinalCTA() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl md:text-2xl mb-12 text-gray-200 max-w-2xl mx-auto"
         >
-          Join thousands of members who have transformed their bodies and lives at ReStart Fitness.
+          Join thousands of members who have transformed their bodies and lives at 247 Gym - The Fitness District.
         </motion.p>
 
         <motion.a

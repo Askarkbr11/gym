@@ -1,0 +1,41 @@
+==========================================
+HOW TO ADD YOUR CLIENT PHOTOS
+==========================================
+
+Your client photos need to REPLACE the placeholder images.
+
+LOCATION: public/assets/images/
+
+QUICK STEPS:
+1. Convert your photos to WebP format
+2. Name them exactly as listed below
+3. Copy them to: public/assets/images/
+4. Replace the existing files
+5. Run: npm run dev
+
+REQUIRED FILES:
+- hero-fallback.webp (reception/exterior photo)
+- gym-interior.webp (wide gym view)
+- personal-training.webp (trainer with client)
+- trainer-1.webp (trainer photo 1)
+- trainer-2.webp (trainer photo 2)
+- trainer-3.webp (trainer photo 3)
+- testimonial-1.webp (member photo 1)
+- testimonial-2.webp (member photo 2)
+- testimonial-3.webp (member photo 3)
+- testimonial-4.webp (member photo 4)
+- transformation-1-before.webp (before photo 1)
+- transformation-1-after.webp (after photo 1)
+- transformation-2-before.webp (before photo 2)
+- transformation-2-after.webp (after photo 2)
+- transformation-3-before.webp (before photo 3)
+- transformation-3-after.webp (after photo 3)
+- transformation-4-before.webp (before photo 4)
+- transformation-4-after.webp (after photo 4)
+- transformation-5-before.webp (before photo 5)
+- transformation-5-after.webp (after photo 5)
+- transformation-6-before.webp (before photo 6)
+- transformation-6-after.webp (after photo 6)
+- testimonial-bg.webp (background texture)
+
+See HOW_TO_ADD_CLIENT_PHOTOS.md for detailed instructions.

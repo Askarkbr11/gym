@@ -67,11 +67,16 @@ export default function About() {
           >
             <Image
               src="/assets/images/gym-interior.webp"
-              alt="ReStart Fitness Center Interior"
+              alt="247 Gym - The Fitness District modern gym interior with state-of-the-art equipment, LED lighting, and active members working out in Oud Metha, Dubai"
               fill
               className="object-cover"
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              onError={(e) => {
+                // Fallback if image doesn't exist
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
             />
           </motion.div>
 
@@ -86,8 +91,8 @@ export default function About() {
               Transform Your <span className="text-primary">Body & Mind</span>
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed">
-              At ReStart Fitness Center, we believe in pushing boundaries and breaking limits. 
-              Our state-of-the-art facility in Bur Dubai is designed to help you achieve your 
+              At 247 Gym - The Fitness District, we believe in pushing boundaries and breaking limits. 
+              Our state-of-the-art facility in Oud Metha, Dubai is designed to help you achieve your 
               fitness goals, whether you&apos;re looking to build strength, lose weight, or transform 
               your lifestyle.
             </p>
