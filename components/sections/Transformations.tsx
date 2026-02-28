@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
@@ -54,6 +54,79 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isHovered, setIsHovered] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  // Global mouse up handler to stop dragging
+  useEffect(() => {
+    const handleGlobalMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      window.addEventListener("mouseup", handleGlobalMouseUp);
+      window.addEventListener("touchend", handleGlobalMouseUp);
+    }
+
+    return () => {
+      window.removeEventListener("mouseup", handleGlobalMouseUp);
+      window.removeEventListener("touchend", handleGlobalMouseUp);
+    };
+  }, [isDragging]);
+
+  const updateSliderPosition = (clientX: number, element: HTMLElement) => {
+    const rect = element.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percent = (x / rect.width) * 100;
+    setSliderPosition(Math.max(0, Math.min(100, percent)));
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isDragging) {
+      updateSliderPosition(e.clientX, e.currentTarget);
+    } else if (isHovered) {
+      updateSliderPosition(e.clientX, e.currentTarget);
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    updateSliderPosition(e.clientX, e.currentTarget);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    setTouchStart(e.touches[0].clientX);
+    updateSliderPosition(e.touches[0].clientX, e.currentTarget);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (isDragging && touchStart !== null) {
+      e.preventDefault(); // Prevent scrolling while dragging
+      updateSliderPosition(e.touches[0].clientX, e.currentTarget);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    setTouchStart(null);
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    // Only open lightbox if not dragging
+    if (!isDragging) {
+      setIsLightboxOpen(true);
+    }
+  };
 
   return (
     <>
@@ -62,21 +135,19 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="relative group cursor-pointer"
+        className="relative group"
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={() => setIsLightboxOpen(true)}
       >
         <div 
-          className="relative h-[400px] rounded-lg overflow-hidden bg-gray-900"
-          onMouseMove={(e) => {
-            if (isHovered) {
-              const rect = e.currentTarget.getBoundingClientRect();
-              const x = e.clientX - rect.left;
-              const percent = (x / rect.width) * 100;
-              setSliderPosition(Math.max(0, Math.min(100, percent)));
-            }
-          }}
+          className="relative h-[400px] rounded-lg overflow-hidden bg-gray-900 touch-none select-none"
+          onMouseMove={handleMouseMove}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onClick={handleClick}
         >
           {/* Before Image */}
           <div className="absolute inset-0">
@@ -107,11 +178,19 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
 
           {/* Slider Handle */}
           <div
-            className="absolute top-0 bottom-0 w-1 bg-primary cursor-ew-resize z-10"
+            className="absolute top-0 bottom-0 w-1 bg-primary cursor-ew-resize z-20 touch-none"
             style={{ left: `${sliderPosition}%` }}
+            onMouseDown={(e) => {
+              e.stopPropagation();
+              setIsDragging(true);
+            }}
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              setIsDragging(true);
+            }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+            <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center touch-none">
               <div className="w-2 h-2 bg-white rounded-full" />
             </div>
           </div>
@@ -124,11 +203,11 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
             After
           </div>
 
-          {/* Info Overlay */}
+          {/* Info Overlay - Only show on hover (desktop) and not when dragging */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            className="absolute inset-0 bg-black/60 flex items-center justify-center"
+            animate={{ opacity: isHovered && !isDragging ? 1 : 0 }}
+            className="absolute inset-0 bg-black/60 flex items-center justify-center pointer-events-none"
           >
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-2">{transformation.name}</h3>

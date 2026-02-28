@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappNumber = "+971XXXXXXXXX"; // Replace with actual number
+  const whatsappNumber = "971542457211"; // WhatsApp number without + for URL
   const message = encodeURIComponent("Hi! I'd like to book a free trial at ReStart Fitness.");
 
   if (!isVisible) return null;
