@@ -1,15 +1,44 @@
 "use client";
 
-import { useRef, Suspense } from "react";
+import { useRef, Suspense, Component, ErrorInfo, ReactNode } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Environment, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
+
+// Error Boundary to catch GLTF loading errors
+class ModelErrorBoundary extends Component<
+  { children: ReactNode; fallback: ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { children: ReactNode; fallback: ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    // Silently handle missing model file - this is expected
+    if (error.message?.includes("404") || error.message?.includes("Failed to load")) {
+      console.log("3D model not found, using fallback geometry");
+    }
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+    return this.props.children;
+  }
+}
 
 // Component that tries to load the GLTF model
 function DumbbellModel() {
   const meshRef = useRef<THREE.Mesh>(null);
   
-  // Always call the hook - it will throw if model doesn't exist, which is handled by Suspense
+  // Try to load the model - will throw if file doesn't exist
   const model = useGLTF("/assets/3d/dumbbell.gltf");
 
   useFrame((state) => {
@@ -61,12 +90,23 @@ function DumbbellFallback() {
   );
 }
 
-// Main component that uses Suspense for error handling
+// Main component that uses Error Boundary and Suspense for error handling
 function Dumbbell() {
+  // For now, always use fallback since model doesn't exist
+  // When you add the model file, this will automatically try to load it
+  // You can also set a flag or environment variable to enable model loading
+  const useModel = false; // Set to true when model file is added
+
+  if (!useModel) {
+    return <DumbbellFallback />;
+  }
+
   return (
-    <Suspense fallback={<DumbbellFallback />}>
-      <DumbbellModel />
-    </Suspense>
+    <ModelErrorBoundary fallback={<DumbbellFallback />}>
+      <Suspense fallback={<DumbbellFallback />}>
+        <DumbbellModel />
+      </Suspense>
+    </ModelErrorBoundary>
   );
 }
 
@@ -87,12 +127,5 @@ export default function Dumbbell3D() {
   );
 }
 
-// Preload the model if available
-if (typeof window !== "undefined") {
-  try {
-    // @ts-ignore
-    useGLTF.preload("/assets/3d/dumbbell.gltf");
-  } catch {
-    // Model not available, that's okay
-  }
-}
+// Note: Model preloading removed to avoid 404 errors
+// The component will gracefully fall back to simple geometry if the model doesn't exist
