@@ -1,21 +1,16 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Environment, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
-function Dumbbell() {
+// Component that tries to load the GLTF model
+function DumbbellModel() {
   const meshRef = useRef<THREE.Mesh>(null);
   
-  // Try to load the model, fallback to a simple geometry if not available
-  let model;
-  try {
-    // @ts-ignore - useGLTF may not have the model
-    model = useGLTF("/assets/3d/dumbbell.gltf");
-  } catch {
-    model = null;
-  }
+  // Always call the hook - it will throw if model doesn't exist, which is handled by Suspense
+  const model = useGLTF("/assets/3d/dumbbell.gltf");
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -24,18 +19,27 @@ function Dumbbell() {
     }
   });
 
-  if (model && model.scene) {
-    return (
-      <primitive
-        ref={meshRef}
-        object={model.scene}
-        scale={0.5}
-        position={[0, 0, 0]}
-      />
-    );
-  }
+  return (
+    <primitive
+      ref={meshRef}
+      object={model.scene}
+      scale={0.5}
+      position={[0, 0, 0]}
+    />
+  );
+}
 
-  // Fallback: Simple dumbbell shape
+// Fallback component with simple geometry
+function DumbbellFallback() {
+  const meshRef = useRef<THREE.Group>(null);
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime) * 0.2;
+      meshRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
+    }
+  });
+
   return (
     <group ref={meshRef}>
       {/* Left weight */}
@@ -54,6 +58,15 @@ function Dumbbell() {
         <meshStandardMaterial color="#E10600" metalness={0.8} roughness={0.2} />
       </mesh>
     </group>
+  );
+}
+
+// Main component that uses Suspense for error handling
+function Dumbbell() {
+  return (
+    <Suspense fallback={<DumbbellFallback />}>
+      <DumbbellModel />
+    </Suspense>
   );
 }
 

@@ -88,12 +88,12 @@ export default function About() {
             <p className="text-gray-300 text-lg leading-relaxed">
               At ReStart Fitness Center, we believe in pushing boundaries and breaking limits. 
               Our state-of-the-art facility in Bur Dubai is designed to help you achieve your 
-              fitness goals, whether you're looking to build strength, lose weight, or transform 
+              fitness goals, whether you&apos;re looking to build strength, lose weight, or transform 
               your lifestyle.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed">
               With certified trainers, cutting-edge equipment, and a supportive community, 
-              we're here to guide you every step of the way.
+              we&apos;re here to guide you every step of the way.
             </p>
 
             {/* Stats */}

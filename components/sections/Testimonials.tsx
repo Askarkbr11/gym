@@ -83,7 +83,7 @@ export default function Testimonials() {
             What Our <span className="text-primary">Members Say</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our members have to say about their experience.
+            Don&apos;t just take our word for it. Here&apos;s what our members have to say about their experience.
           </p>
         </motion.div>
 
@@ -113,7 +113,7 @@ export default function Testimonials() {
 
               {/* Testimonial Text */}
               <p className="text-xl md:text-2xl text-gray-200 text-center mb-8 leading-relaxed">
-                "{currentTestimonial.text}"
+                &ldquo;{currentTestimonial.text}&rdquo;
               </p>
 
               {/* Author */}
