@@ -51,11 +51,17 @@ const transformations: Transformation[] = [
 ];
 
 function TransformationCard({ transformation, index }: { transformation: Transformation; index: number }) {
+  // Always start at middle (50%) on mount/refresh
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isHovered, setIsHovered] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  // Reset slider to middle on mount
+  useEffect(() => {
+    setSliderPosition(50);
+  }, []);
 
   // Global mouse up handler to stop dragging
   useEffect(() => {

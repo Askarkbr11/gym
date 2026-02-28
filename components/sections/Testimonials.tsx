@@ -43,7 +43,13 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function Testimonials() {
+  // Always start at first testimonial (index 0) on mount/refresh
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Reset to first testimonial on mount
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {

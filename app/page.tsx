@@ -10,10 +10,12 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import Navigation from "@/components/ui/Navigation";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <ScrollToTop />
       <Navigation />
       <Hero />
       <About />
