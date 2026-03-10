@@ -44,7 +44,7 @@ export default function Contact() {
               <div>
                 <h3 className="text-xl font-bold mb-2">Address</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  1st Floor Warsan Tower 10, Al Rabee'a 2 Barsha Heights
+                  1st Floor Warsan Tower 10, Al Rabee&apos;a 2 Barsha Heights
                   <br />
                   Barsha Heights - Dubai - United Arab Emirates
                 </p>

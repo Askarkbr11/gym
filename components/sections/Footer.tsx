@@ -60,7 +60,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                1st Floor Warsan Tower 10, Al Rabee'a 2 Barsha Heights
+                1st Floor Warsan Tower 10, Al Rabee&apos;a 2 Barsha Heights
                 <br />
                 Barsha Heights - Dubai - United Arab Emirates
               </li>
