@@ -12,10 +12,10 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "https://facebook.com/247gym" },
-  { name: "Instagram", icon: Instagram, href: "https://instagram.com/247gym" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com/247gym" },
-  { name: "YouTube", icon: Youtube, href: "https://youtube.com/247gym" },
+  { name: "Facebook", icon: Facebook, href: "https://facebook.com/fitnessavenue" },
+  { name: "Instagram", icon: Instagram, href: "https://instagram.com/fitnessavenue" },
+  { name: "Twitter", icon: Twitter, href: "https://twitter.com/fitnessavenue" },
+  { name: "YouTube", icon: Youtube, href: "https://youtube.com/fitnessavenue" },
 ];
 
 export default function Footer() {
@@ -28,13 +28,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              247 <span className="text-primary">Gym</span>
+              Fitness <span className="text-primary">Avenue</span>
             </h3>
             <p className="text-gray-400 mb-4">
               Build Strength. Break Limits.
             </p>
             <p className="text-gray-500 text-sm">
-              The Fitness District - Oud Metha, Dubai, UAE
+              Barsha Heights, Dubai, UAE
             </p>
           </div>
 
@@ -60,24 +60,24 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                2nd St - Oud Metha
+                1st Floor Warsan Tower 10, Al Rabee'a 2 Barsha Heights
                 <br />
-                Dubai - United Arab Emirates
+                Barsha Heights - Dubai - United Arab Emirates
               </li>
               <li>
                 <a
-                  href="tel:+971585240247"
+                  href="tel:+97142384427"
                   className="hover:text-primary transition-colors"
                 >
-                  +971 58 524 0247
+                  +971 42 384 427
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@247gym.ae"
+                  href="mailto:info@fitnessavenue.ae"
                   className="hover:text-primary transition-colors"
                 >
-                  info@247gym.ae
+                  info@fitnessavenue.ae
                 </a>
               </li>
             </ul>
@@ -109,7 +109,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © {currentYear} 247 Gym - The Fitness District. All rights reserved.
+            © {currentYear} Fitness Avenue. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <Link

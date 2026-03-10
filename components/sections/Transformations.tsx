@@ -159,7 +159,7 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
           <div className="absolute inset-0">
             <Image
               src={transformation.before}
-              alt={`${transformation.name} transformation before at 247 Gym - The Fitness District`}
+              alt={`${transformation.name} transformation before at Fitness Avenue`}
               fill
               className="object-cover"
               placeholder="blur"
@@ -178,7 +178,7 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
           >
             <Image
               src={transformation.after}
-              alt={`${transformation.name} transformation after at 247 Gym - The Fitness District`}
+              alt={`${transformation.name} transformation after at Fitness Avenue`}
               fill
               className="object-cover"
               placeholder="blur"
@@ -258,7 +258,7 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
                 <div className="relative h-[500px] rounded-lg overflow-hidden">
                   <Image
                     src={transformation.before}
-                    alt={`${transformation.name} transformation before at 247 Gym`}
+                    alt={`${transformation.name} transformation before at Fitness Avenue`}
                     fill
                     className="object-cover"
                     onError={(e) => {
@@ -273,7 +273,7 @@ function TransformationCard({ transformation, index }: { transformation: Transfo
                 <div className="relative h-[500px] rounded-lg overflow-hidden">
                   <Image
                     src={transformation.after}
-                    alt={`${transformation.name} transformation after at 247 Gym`}
+                    alt={`${transformation.name} transformation after at Fitness Avenue`}
                     fill
                     className="object-cover"
                     onError={(e) => {

@@ -2,7 +2,7 @@
 
 import { useRef, Suspense, Component, ErrorInfo, ReactNode, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { OrbitControls, Environment, useGLTF, ContactShadows, AccumulativeShadows, RandomizedLight } from "@react-three/drei";
+import { OrbitControls, useGLTF, ContactShadows, AccumulativeShadows, RandomizedLight } from "@react-three/drei";
 import * as THREE from "three";
 
 // Error Boundary to catch GLTF loading errors
@@ -213,7 +213,6 @@ export default function Dumbbell3DImproved() {
       performance={{ min: 0.5 }} // Reduce quality if FPS drops
     >
       <Lighting />
-      <Environment preset="sunset" />
       <Dumbbell />
       
       {/* Soft shadows for depth */}

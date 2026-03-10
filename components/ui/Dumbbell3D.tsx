@@ -2,7 +2,7 @@
 
 import { useRef, Suspense, Component, ErrorInfo, ReactNode } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Environment, useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
 // Error Boundary to catch GLTF loading errors
@@ -161,7 +161,6 @@ export default function Dumbbell3D() {
       <directionalLight position={[-5, 3, -5]} intensity={0.4} />
       {/* Rim light with brand color for depth */}
       <pointLight position={[0, 5, -5]} intensity={0.5} color="#E10600" />
-      <Environment preset="sunset" />
       <Dumbbell />
       <OrbitControls
         enableZoom={false}

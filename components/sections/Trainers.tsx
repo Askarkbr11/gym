@@ -18,21 +18,21 @@ const trainers: Trainer[] = [
     role: "Head Strength Coach",
     specialties: ["Strength Training", "Powerlifting", "Bodybuilding"],
     image: "/assets/images/trainer-1.webp",
-    instagram: "@247gym",
+    instagram: "@fitnessavenue",
   },
   {
     name: "Sarah Johnson",
     role: "Personal Training Specialist",
     specialties: ["Fat Loss", "Nutrition", "HIIT"],
     image: "/assets/images/trainer-2.webp",
-    instagram: "@247gym",
+    instagram: "@fitnessavenue",
   },
   {
     name: "Mohammed Hassan",
     role: "CrossFit Coach",
     specialties: ["CrossFit", "Functional Training", "Mobility"],
     image: "/assets/images/trainer-3.webp",
-    instagram: "@247gym",
+    instagram: "@fitnessavenue",
   },
 ];
 
@@ -178,7 +178,7 @@ function TrainerCard({ trainer, index }: { trainer: Trainer; index: number }) {
             >
             <Image
               src={trainer.image}
-              alt={`${trainer.name} - ${trainer.role} at 247 Gym - The Fitness District`}
+              alt={`${trainer.name} - ${trainer.role} at Fitness Avenue`}
               fill
               className="object-cover"
               placeholder="blur"

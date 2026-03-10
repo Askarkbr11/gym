@@ -67,7 +67,7 @@ export default function About() {
           >
             <Image
               src="/assets/images/gym-interior.webp"
-              alt="247 Gym - The Fitness District modern gym interior with state-of-the-art equipment, LED lighting, and active members working out in Oud Metha, Dubai"
+              alt="Fitness Avenue modern gym interior with state-of-the-art equipment, LED lighting, and active members working out in Barsha Heights, Dubai"
               fill
               className="object-cover"
               placeholder="blur"
@@ -91,8 +91,8 @@ export default function About() {
               Transform Your <span className="text-primary">Body & Mind</span>
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed">
-              At 247 Gym - The Fitness District, we believe in pushing boundaries and breaking limits. 
-              Our state-of-the-art facility in Oud Metha, Dubai is designed to help you achieve your 
+              At Fitness Avenue, we believe in pushing boundaries and breaking limits. 
+              Our state-of-the-art facility in Barsha Heights, Dubai is designed to help you achieve your 
               fitness goals, whether you&apos;re looking to build strength, lose weight, or transform 
               your lifestyle.
             </p>

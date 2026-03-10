@@ -5,13 +5,13 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "247 Gym - The Fitness District | Build Strength. Break Limits. | Oud Metha, Dubai, UAE",
-  description: "Premium transformation gym in Oud Metha, Dubai, UAE. Offering Strength Training, Fat Loss, Personal Training, CrossFit, and Group Classes. Book your free trial today!",
-  keywords: "gym, fitness, Oud Metha, Dubai, UAE, strength training, personal training, CrossFit, group classes, fat loss, 247 Gym",
-  authors: [{ name: "247 Gym - The Fitness District" }],
+  title: "Fitness Avenue | Build Strength. Break Limits. | Barsha Heights, Dubai, UAE",
+  description: "Premium transformation gym in Barsha Heights, Dubai, UAE. Offering Strength Training, Fat Loss, Personal Training, CrossFit, and Group Classes. Book your free trial today!",
+  keywords: "gym, fitness, Barsha Heights, Dubai, UAE, strength training, personal training, CrossFit, group classes, fat loss, Fitness Avenue",
+  authors: [{ name: "Fitness Avenue" }],
   openGraph: {
-    title: "247 Gym - The Fitness District | Build Strength. Break Limits.",
-    description: "Premium transformation gym in Oud Metha, Dubai, UAE",
+    title: "Fitness Avenue | Build Strength. Break Limits.",
+    description: "Premium transformation gym in Barsha Heights, Dubai, UAE",
     type: "website",
     locale: "en_AE",
   },
@@ -36,15 +36,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "247 Gym - The Fitness District",
-              "description": "Premium transformation gym in Oud Metha, Dubai, UAE",
+              "name": "Fitness Avenue",
+              "description": "Premium transformation gym in Barsha Heights, Dubai, UAE",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "2nd St - Oud Metha",
-                "addressLocality": "Dubai",
+                "streetAddress": "1st Floor Warsan Tower 10, Al Rabee'a 2 Barsha Heights",
+                "addressLocality": "Barsha Heights, Dubai",
                 "addressCountry": "United Arab Emirates",
               },
-              "telephone": "+971585240247",
+              "telephone": "+97142384427",
               "priceRange": "$$",
               "openingHours": "Mo-Su 06:00-23:00",
             }),

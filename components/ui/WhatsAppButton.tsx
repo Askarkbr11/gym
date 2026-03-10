@@ -13,8 +13,8 @@ export default function WhatsAppButton() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappNumber = "971585240247"; // WhatsApp number without + for URL
-  const message = encodeURIComponent("Hi! I'd like to book a free trial at 247 Gym - The Fitness District.");
+  const whatsappNumber = "97142384427"; // WhatsApp number without + for URL
+  const message = encodeURIComponent("Hi! I'd like to book a free trial at Fitness Avenue.");
 
   if (!isVisible) return null;
 

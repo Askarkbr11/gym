@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
     name: "Ahmed Khalil",
     role: "Member",
     image: "/assets/images/testimonial-1.webp",
-    text: "247 Gym transformed my life. The trainers are incredibly knowledgeable and the community is supportive. I've lost 15kg in 6 months and feel stronger than ever!",
+    text: "Fitness Avenue transformed my life. The trainers are incredibly knowledgeable and the community is supportive. I've lost 15kg in 6 months and feel stronger than ever!",
     rating: 5,
   },
   {
@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     name: "Omar Hassan",
     role: "Member",
     image: "/assets/images/testimonial-3.webp",
-    text: "I've tried many gyms in Dubai, but 247 Gym stands out. The equipment is top-notch, the trainers are professional, and the results speak for themselves.",
+    text: "I've tried many gyms in Dubai, but Fitness Avenue stands out. The equipment is top-notch, the trainers are professional, and the results speak for themselves.",
     rating: 5,
   },
   {
